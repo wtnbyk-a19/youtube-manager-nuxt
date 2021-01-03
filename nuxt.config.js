@@ -40,6 +40,7 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
+    '@nuxtjs/axios',
   ],
   /*
   ** Build configuration
@@ -57,5 +58,17 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+
+  axios: {
+    baseURL: 'http://localhost:8080/'
+  },
+
+  proxy: {
+    '/api': '/'
+  },
+
+  vue: {
+    devtools: true
+  },
 }
