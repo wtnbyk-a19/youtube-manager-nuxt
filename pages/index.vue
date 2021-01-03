@@ -39,7 +39,7 @@
 
     methods: {
       loadMore() {
-        const playload = {
+        const payload = {
           uri: ROUTES.GET.POPULARS,
           params: {
             pageToken: this.nextPageToken
