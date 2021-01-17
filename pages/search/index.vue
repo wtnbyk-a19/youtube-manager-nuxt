@@ -4,7 +4,7 @@
 
             <div class="block">
                 <div class="block video-block" v-for="item in items" :key='item.id'>
-                    <Appvideo
+                    <AppVideo
                         :item="item"
                         :video-id="item.id.videoId"
                     />
@@ -14,7 +14,7 @@
             <div class="block">
                 <nav class="pagination">
                     <a 
-                        href=""
+                        href.prevent="#"
                         class="pagination-next"
                         @click="loadMore"
                     >
