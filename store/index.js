@@ -24,6 +24,7 @@ export const actions = {
         const params = {
             ...res.video_list,
         }
+        params.isFavorite = res.is_favorite || false
         commit('mutateVideo', params)
     },
 
@@ -66,6 +67,12 @@ export const actions = {
         this.$cookies.remove('jwt_token')
         this.app.router.push('/')
     },
+
+    async toggleFavorite({commit}, payload) {
+        const client = createRequestClient(this.$axios)
+        const res = await client.post(payload.uri)
+        commit('mutateToggleFavorite', res.is_favorite)
+    },
 }
 
 export const mutations = {
@@ -76,6 +83,7 @@ export const mutations = {
 
     mutateVideo(state, payload) {
         const params = (payload.items && payload.items.length > 0) ? payload.items[0] : {}
+        params.isFavorite = payload.isFavorite || false
         state.item = params
     },
 
@@ -91,6 +99,10 @@ export const mutations = {
     mutateToken(state, payload) {
         state.token = payload
     },
+
+    mutateToggleFavorite(state, payload) {
+        state.item.isFavorite = payload
+    }
 }
 
 export const getters = {
