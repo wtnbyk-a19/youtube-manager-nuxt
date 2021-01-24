@@ -25,7 +25,7 @@
                             <a href="#" @click.prevent="toggleFavorite">
                                 <span class="icon large">
                                     <span class="fa-stack fa-lg">
-                                        <i class="fas fa-heart fa-stack-1x" :class="[item.isFavorite ? 'active' : 'has-text-grey-light']">/i>
+                                        <i class="fas fa-heart fa-stack-1x" :class="[item.isFavorite ? 'active' : 'has-text-grey-light']"></i>
                                     </span>
                                 </span>
                             </a>
