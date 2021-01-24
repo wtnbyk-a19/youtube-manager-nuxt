@@ -10,7 +10,7 @@ export class RequestClient {
     }
 
     async post(uri) {
-        return await this.$axios.$post(uri)
+        return await this.axios.$post(uri)
     }
 }
 

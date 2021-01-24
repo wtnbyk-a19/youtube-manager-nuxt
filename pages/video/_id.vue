@@ -87,7 +87,7 @@
 
         methods: {
             async toggleFavorite() {
-                await this.$dtore.dispatch('toggleFavorite', {
+                await this.$store.dispatch('toggleFavorite', {
                     uri: ROUTES.POST.TOGGLE_FAVORITE.replace(':id', this.$route.params.id)
                 })
             }
