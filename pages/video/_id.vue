@@ -23,7 +23,7 @@
 
                         <div v-if="isLoggedIn" class="level-right">
                             <a href="#" @click.prevent="toggleFavorite">
-                                <span class="icon large">
+                                <span class="icon is-large">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-heart fa-stack-1x" :class="[item.isFavorite ? 'active' : 'has-text-grey-light']"></i>
                                     </span>
@@ -49,7 +49,7 @@
                         >
                             <article class="media">
                                 <div class="media-left">
-                                    <figure>
+                                    <figure class="image">
                                         <img :src="relatedItem.snippet.thumbnails.default.url" alt="thumbnail">
                                     </figure>
                                 </div>
