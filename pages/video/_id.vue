@@ -96,7 +96,7 @@
         async fetch({store, route}) {
             await store.dispatch('findVideo', {
                 uri: ROUTES.GET.VIDEO.replace(':id', route.params.id),
-            }),
+            })
             await store.dispatch('fetchRelatedVideos', {
                 uri: ROUTES.GET.RELATED.replace(':id', route.params.id),
             })
