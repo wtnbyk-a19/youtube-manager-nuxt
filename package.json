@@ -17,6 +17,7 @@
     "cookie-universal-nuxt": "^2.1.4",
     "firebase": "^8.2.3",
     "nuxt": "^2.0.0",
+    "qs": "^6.9.6",
     "vue-youtube": "^1.4.0"
   },
   "devDependencies": {}
