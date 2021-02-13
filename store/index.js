@@ -45,7 +45,7 @@ export const actions = {
         await firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         const res = await firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         const token = await res.user.getIdToken()
-        this.$cookies.set('jwt_token', token)
+        this.$cookies.set('jwt_token', payload)
         const refreshToken = res.user.refreshToken
         this.$cookies.set('refresh_token', refreshToken)
         commit('mutateToken', token)

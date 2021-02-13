@@ -1,3 +1,5 @@
+import qs from "qs";
+
 export class RequestClient {
     constructor(axios, cookies, store) {
         this.axios = axios
@@ -25,7 +27,7 @@ export class RequestClient {
         const code = parseInt(err.response && err.response.status)
         const refreshToken = this.cookies.get('refresh_token') || null
 
-        if (code == 401 && refreshToken && this.hasRetried == false) {
+        if (code === 401 && refreshToken && this.hasRetried == false) {
             this.hasRetried = true
 
             if (refreshToken) {
@@ -38,7 +40,7 @@ export class RequestClient {
                     method: 'POST',
                     headers: {'content-type': 'application/x-www-form-urlencoded'},
                     data: qs.stringify(data),
-                    url: 'https://securetoken.googieapis.com/v1/token?key=AIzaSyCOkNErQY-4kbckP4GdFx9DNFwhydZWQMw'
+                    url: 'https://securetoken.googleapis.com/v1/token?key=AIzaSyCOkNErQY-4kbckP4GdFx9DNFwhydZWQMw'
                 })
 
                 this.store.dispatch('setToken', res.id_token)
